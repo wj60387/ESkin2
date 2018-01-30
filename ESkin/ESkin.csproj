@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{534B884E-3DE0-4A0C-BD73-9D23A5F82687}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESkin</RootNamespace>
+    <AssemblyName>ESkin</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\ImageDrawRect.cs" />
+    <Compile Include="Helper\ImageObject.cs" />
+    <Compile Include="Helper\NativeMethods.cs" />
+    <Compile Include="Helper\Win32.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="System.Windows.Forms\ButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\CheckBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\DataGridViewCheckTextBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\FormEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\Nav.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\ProcessBarEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\RadioButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\Test\ChatListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\Test\ChatListItem.cs" />
+    <Compile Include="System.Windows.Forms\TreeNodeEx.cs" />
+    <Compile Include="System.Windows.Forms\TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\UCTextBoxEX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\UCTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\WaterTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System.Windows.Forms\ToolStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System.Windows.Forms\FormEx.resx">
+      <DependentUpon>FormEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System.Windows.Forms\Test\ChatListBox.resx">
+      <DependentUpon>ChatListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System.Windows.Forms\UCTextBoxEX.resx">
+      <DependentUpon>UCTextBoxEX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System.Windows.Forms\UCTextBox.resx">
+      <DependentUpon>UCTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System.Windows.Forms\WaterTextBox.resx">
+      <DependentUpon>WaterTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\关于.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2x26 点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2x26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4x549.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16x16 没勾选.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16x16 没勾选点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16x16勾选.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16x16勾选点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\关闭按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\还原按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\计算机名.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\连接状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器名称.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器配置听诊.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器所属人.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器序号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\序号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\选择.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\远程教学.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16x1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\奔达听诊平台.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\登入框登录200x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\输入框密码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\输入框账号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\账号图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\单选框未选中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\单选框选中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器配置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮右半椭圆.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮左半椭圆.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\导航栏.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊教学.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊录音.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊配置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器图片.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊小图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统按钮关闭.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统按钮还原.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统按钮最小化.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统关于.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统设置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\下拉箭头.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除未点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\圆黑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\圆亮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\布迪亨LOGO.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

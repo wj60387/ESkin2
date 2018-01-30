@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F24AAD72-8314-4119-A09F-6AB20FCB73D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BDAuscultation</RootNamespace>
+    <AssemblyName>BDAuscultation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>布迪亨2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="InTheHand.Net.Personal">
+      <HintPath>..\Common\InTheHand.Net.Personal.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Common\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Common\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MMM.HealthCare.Scopes.Device">
+      <HintPath>..\Common\MMM.HealthCare.Scopes.Device.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Common\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ProtocalData">
+      <HintPath>..\Common\ProtocalData.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\Common\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebSocket4Net">
+      <HintPath>..\Common\WebSocket4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commmon.cs" />
+    <Compile Include="Coustom\CButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Devices\Mock\MockStethScopeClass.cs" />
+    <Compile Include="Devices\StethoscopeManager.cs" />
+    <Compile Include="Forms\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAbout.designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAudioDetail_XY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAudioDetail_XY.designer.cs">
+      <DependentUpon>FrmAudioDetail_XY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAuscultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAuscultation.Designer.cs">
+      <DependentUpon>FrmAuscultation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Init.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.XY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.YCTZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmShare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmShare.Designer.cs">
+      <DependentUpon>FrmShare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAudioDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAudioDetail.designer.cs">
+      <DependentUpon>FrmAudioDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAudioRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAudioRecord.Designer.cs">
+      <DependentUpon>FrmAudioRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.YDTZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.TZLY.Local.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProcessBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProcessBar.designer.cs">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReg.designer.cs">
+      <DependentUpon>FrmReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStetInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStetInfo.Designer.cs">
+      <DependentUpon>FrmStetInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.TZJX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.TZLY.Down.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.TZPZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IGetAudioInfo\IGetFJ.cs" />
+    <Compile Include="IGetAudioInfo\IGetInfo.cs" />
+    <Compile Include="IHandleMessage.cs" />
+    <Compile Include="Models\AudioDownLoadInfo.cs" />
+    <Compile Include="Models\AudioInfo.cs" />
+    <Compile Include="Models\AuthorizationInfo.cs" />
+    <Compile Include="Models\StetInfo.cs" />
+    <Compile Include="MyResouces.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AuscultationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settting.cs" />
+    <Compile Include="SQLite\SqliteHelper.cs" />
+    <Compile Include="SupSocket.cs" />
+    <Compile Include="Utilities\CommonUtil.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
+    <Compile Include="Utilities\FileOperation.cs" />
+    <EmbeddedResource Include="Coustom\CButton.resx">
+      <DependentUpon>CButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAudioDetail_XY.resx">
+      <DependentUpon>FrmAudioDetail_XY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAuscultation.resx">
+      <DependentUpon>FrmAuscultation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmShare.resx">
+      <DependentUpon>FrmShare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAudioDetail.resx">
+      <DependentUpon>FrmAudioDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAudioRecord.resx">
+      <DependentUpon>FrmAudioRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProcessBar.resx">
+      <DependentUpon>FrmProcessBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReg.resx">
+      <DependentUpon>FrmReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStetInfo.resx">
+      <DependentUpon>FrmStetInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mydb.db" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\AuscultationService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuscultationService\service.wsdl" />
+    <None Include="Service References\AuscultationService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuscultationService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuscultationService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuscultationService\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\奔达听诊平台.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\登入框登录200x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\输入框密码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\输入框账号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\账号图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮右半椭圆.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮左半椭圆.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\单选框未选中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\单选框选中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\导航栏.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除未点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊教学.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊录音.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊配置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器配置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器图片.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊小图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统按钮关闭.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统按钮还原.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统按钮最小化.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统关于.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统设置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\下拉箭头.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\下载点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\下载未点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\详情.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\详情点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\详情未点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\远程教学.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\云端听诊.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\编辑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\编辑点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\编辑未点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\计算机名.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\连接状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊类型.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器编号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器描述.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器名字.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器所属人.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器备注.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuscultationService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuscultationService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuscultationService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuscultationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器用途.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器序列号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\患者类型.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\患者姓名.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\医生姓名.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\备注.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\分享时间.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\分享者.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\下载.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\下载时间.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jcbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\播放点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\播放未点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\录音点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\录音未点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\年龄.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\性别.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\初步诊断.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\录制时间.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\时长.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\附件.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\检查报告点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\分享.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\分享点击状态.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\分享未点击.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\上传时间.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\选择.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊器名称.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\部位.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\录音.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\缩略图.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title.png" />
+    <None Include="Resources\bg.png" />
+    <Content Include="Resources\模拟测试.png" />
+    <Content Include="布迪亨2.ico" />
+    <None Include="Resources\圆黑.png" />
+    <None Include="Resources\圆亮.png" />
+    <None Include="Resources\更新背景图.png" />
+    <None Include="Resources\更新中.png" />
+    <None Include="Resources\连接.png" />
+    <None Include="Resources\连接-绿色.png" />
+    <Content Include="applicense.txt" />
+    <Content Include="license.txt" />
+    <Content Include="Resources\心音.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ESkin\ESkin.csproj">
+      <Project>{534b884e-3de0-4a0c-bd73-9d23a5f82687}</Project>
+      <Name>ESkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

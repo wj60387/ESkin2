@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{530C20FD-3BB9-4047-AC08-C6DC0A8C4600}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EApp</RootNamespace>
+    <AssemblyName>EApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin3.Designer.cs">
+      <DependentUpon>FrmLogin3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain3.Designer.cs">
+      <DependentUpon>FrmMain3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin2.Designer.cs">
+      <DependentUpon>FrmLogin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain2.Designer.cs">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin3.resx">
+      <DependentUpon>FrmLogin3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain3.resx">
+      <DependentUpon>FrmMain3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin2.resx">
+      <DependentUpon>FrmLogin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain2.resx">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ESkin\ESkin.csproj">
+      <Project>{534b884e-3de0-4a0c-bd73-9d23a5f82687}</Project>
+      <Name>ESkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\导航栏200x1080.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\听诊教学蓝色文字.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\关于.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\系统.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+    <Content Include="Resources\logo.png" />
+    <None Include="Resources\详情未点击.png" />
+    <None Include="Resources\详情点击状态.png" />
+    <None Include="Resources\详情.png" />
+    <None Include="Resources\下载未点击.png" />
+    <None Include="Resources\下载点击状态.png" />
+    <None Include="Resources\下载.png" />
+    <None Include="Resources\删除未点击.png" />
+    <None Include="Resources\删除点击状态.png" />
+    <None Include="Resources\删除.png" />
+    <None Include="Resources\选择.png" />
+    <None Include="Resources\序号.png" />
+    <None Include="Resources\听诊器所属人.png" />
+    <None Include="Resources\听诊器名称.png" />
+    <None Include="Resources\听诊器编号.png" />
+    <None Include="Resources\按钮左半椭圆.png" />
+    <None Include="Resources\云端听诊.png" />
+    <None Include="Resources\远程教学.png" />
+    <None Include="Resources\系统设置.png" />
+    <None Include="Resources\系统关于.png" />
+    <None Include="Resources\系统按钮最小化.png" />
+    <None Include="Resources\系统按钮还原.png" />
+    <None Include="Resources\系统按钮关闭.png" />
+    <None Include="Resources\听诊器图片.png" />
+    <None Include="Resources\听诊器配置.png" />
+    <None Include="Resources\听诊配置.png" />
+    <None Include="Resources\听诊录音.png" />
+    <None Include="Resources\听诊教学.png" />
+    <None Include="Resources\导航栏.png" />
+    <None Include="Resources\单选框选中.png" />
+    <None Include="Resources\单选框未选中.png" />
+    <None Include="Resources\账号图标.png" />
+    <None Include="Resources\输入框账号.png" />
+    <None Include="Resources\输入框密码.png" />
+    <None Include="Resources\密码图标.png" />
+    <None Include="Resources\登入框登录200x40.png" />
+    <None Include="Resources\奔达听诊平台.png" />
+    <None Include="Resources\背景.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
