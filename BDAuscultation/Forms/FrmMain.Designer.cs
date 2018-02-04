@@ -161,6 +161,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvXY = new System.Windows.Forms.DataGridViewEx();
             this.dgvXY_LocalGUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvXY_StetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvXY_PType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvXY_PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvXY_DoctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -234,7 +235,7 @@
             this.tabControlYDTZ.Location = new System.Drawing.Point(88, 27);
             this.tabControlYDTZ.Name = "tabControlYDTZ";
             this.tabControlYDTZ.SelectedIndex = 0;
-            this.tabControlYDTZ.Size = new System.Drawing.Size(682, 380);
+            this.tabControlYDTZ.Size = new System.Drawing.Size(805, 380);
             this.tabControlYDTZ.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlYDTZ.TabIndex = 43;
             // 
@@ -250,7 +251,7 @@
             this.tabTZPZ.Location = new System.Drawing.Point(0, 1);
             this.tabTZPZ.Name = "tabTZPZ";
             this.tabTZPZ.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTZPZ.Size = new System.Drawing.Size(680, 377);
+            this.tabTZPZ.Size = new System.Drawing.Size(803, 377);
             this.tabTZPZ.TabIndex = 0;
             this.tabTZPZ.Text = "tabPage1";
             // 
@@ -358,7 +359,7 @@
             this.dgvTZQPZ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTZQPZ.RowTemplate.Height = 32;
             this.dgvTZQPZ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTZQPZ.Size = new System.Drawing.Size(673, 297);
+            this.dgvTZQPZ.Size = new System.Drawing.Size(796, 297);
             this.dgvTZQPZ.TabIndex = 38;
             // 
             // dgvTZQPZStetNO
@@ -500,7 +501,7 @@
             this.tabTZJX.Location = new System.Drawing.Point(0, 1);
             this.tabTZJX.Name = "tabTZJX";
             this.tabTZJX.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTZJX.Size = new System.Drawing.Size(680, 377);
+            this.tabTZJX.Size = new System.Drawing.Size(803, 377);
             this.tabTZJX.TabIndex = 1;
             this.tabTZJX.Text = "tabPage2";
             // 
@@ -582,7 +583,7 @@
             this.dgvTZJX.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTZJX.RowTemplate.Height = 32;
             this.dgvTZJX.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTZJX.Size = new System.Drawing.Size(673, 293);
+            this.dgvTZJX.Size = new System.Drawing.Size(796, 293);
             this.dgvTZJX.TabIndex = 42;
             // 
             // dgvTZJXTZQNO
@@ -689,7 +690,7 @@
             this.tabTZLY.Controls.Add(this.panelLY);
             this.tabTZLY.Location = new System.Drawing.Point(0, 1);
             this.tabTZLY.Name = "tabTZLY";
-            this.tabTZLY.Size = new System.Drawing.Size(680, 377);
+            this.tabTZLY.Size = new System.Drawing.Size(803, 377);
             this.tabTZLY.TabIndex = 2;
             this.tabTZLY.Text = "tabPage3";
             // 
@@ -704,7 +705,7 @@
             this.panelLY.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLY.Location = new System.Drawing.Point(0, 0);
             this.panelLY.Name = "panelLY";
-            this.panelLY.Size = new System.Drawing.Size(680, 377);
+            this.panelLY.Size = new System.Drawing.Size(803, 377);
             this.panelLY.TabIndex = 0;
             // 
             // btnTZLY
@@ -741,7 +742,7 @@
             this.panelLY2.Controls.Add(this.tabLY);
             this.panelLY2.Location = new System.Drawing.Point(-1, 75);
             this.panelLY2.Name = "panelLY2";
-            this.panelLY2.Size = new System.Drawing.Size(681, 301);
+            this.panelLY2.Size = new System.Drawing.Size(804, 301);
             this.panelLY2.TabIndex = 45;
             // 
             // btnLYDown
@@ -800,7 +801,7 @@
             this.tabLY.Location = new System.Drawing.Point(3, 36);
             this.tabLY.Name = "tabLY";
             this.tabLY.SelectedIndex = 0;
-            this.tabLY.Size = new System.Drawing.Size(680, 262);
+            this.tabLY.Size = new System.Drawing.Size(803, 262);
             this.tabLY.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabLY.TabIndex = 0;
             // 
@@ -810,7 +811,7 @@
             this.tabLYLocal.Location = new System.Drawing.Point(0, 1);
             this.tabLYLocal.Name = "tabLYLocal";
             this.tabLYLocal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLYLocal.Size = new System.Drawing.Size(678, 259);
+            this.tabLYLocal.Size = new System.Drawing.Size(801, 259);
             this.tabLYLocal.TabIndex = 0;
             this.tabLYLocal.Text = "tabPage1";
             this.tabLYLocal.UseVisualStyleBackColor = true;
@@ -872,7 +873,7 @@
             this.dgvTZLY_Local.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTZLY_Local.RowTemplate.Height = 32;
             this.dgvTZLY_Local.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTZLY_Local.Size = new System.Drawing.Size(672, 253);
+            this.dgvTZLY_Local.Size = new System.Drawing.Size(795, 253);
             this.dgvTZLY_Local.TabIndex = 39;
             // 
             // dgvTZLY_LocalGUID
@@ -1140,7 +1141,7 @@
             this.tabYDTZ.Controls.Add(this.btnBgYDTZ);
             this.tabYDTZ.Location = new System.Drawing.Point(0, 1);
             this.tabYDTZ.Name = "tabYDTZ";
-            this.tabYDTZ.Size = new System.Drawing.Size(680, 377);
+            this.tabYDTZ.Size = new System.Drawing.Size(803, 377);
             this.tabYDTZ.TabIndex = 3;
             this.tabYDTZ.Text = "tabPage4";
             // 
@@ -1155,7 +1156,7 @@
             this.panel2.Controls.Add(this.tabControlYDTZMain);
             this.panel2.Location = new System.Drawing.Point(0, 75);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(682, 290);
+            this.panel2.Size = new System.Drawing.Size(805, 290);
             this.panel2.TabIndex = 49;
             // 
             // btnShare
@@ -1215,7 +1216,7 @@
             this.tabControlYDTZMain.Location = new System.Drawing.Point(3, 36);
             this.tabControlYDTZMain.Name = "tabControlYDTZMain";
             this.tabControlYDTZMain.SelectedIndex = 0;
-            this.tabControlYDTZMain.Size = new System.Drawing.Size(678, 251);
+            this.tabControlYDTZMain.Size = new System.Drawing.Size(801, 251);
             this.tabControlYDTZMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlYDTZMain.TabIndex = 0;
             // 
@@ -1225,7 +1226,7 @@
             this.tabYDTZUpLoad.Location = new System.Drawing.Point(0, 1);
             this.tabYDTZUpLoad.Name = "tabYDTZUpLoad";
             this.tabYDTZUpLoad.Padding = new System.Windows.Forms.Padding(3);
-            this.tabYDTZUpLoad.Size = new System.Drawing.Size(676, 248);
+            this.tabYDTZUpLoad.Size = new System.Drawing.Size(799, 248);
             this.tabYDTZUpLoad.TabIndex = 0;
             this.tabYDTZUpLoad.Text = "tabPage1";
             this.tabYDTZUpLoad.UseVisualStyleBackColor = true;
@@ -1287,7 +1288,7 @@
             this.dgvYDTZUpLoad.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvYDTZUpLoad.RowTemplate.Height = 32;
             this.dgvYDTZUpLoad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvYDTZUpLoad.Size = new System.Drawing.Size(670, 242);
+            this.dgvYDTZUpLoad.Size = new System.Drawing.Size(793, 242);
             this.dgvYDTZUpLoad.TabIndex = 40;
             // 
             // dgvYDTZUpLoadGUID
@@ -1549,7 +1550,7 @@
             this.tabYCTZ.Controls.Add(this.btnBgYCTZ);
             this.tabYCTZ.Location = new System.Drawing.Point(0, 1);
             this.tabYCTZ.Name = "tabYCTZ";
-            this.tabYCTZ.Size = new System.Drawing.Size(680, 377);
+            this.tabYCTZ.Size = new System.Drawing.Size(803, 377);
             this.tabYCTZ.TabIndex = 4;
             this.tabYCTZ.Text = "tabPage5";
             // 
@@ -1633,7 +1634,7 @@
             this.dgvYCTZ.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvYCTZ.RowTemplate.Height = 32;
             this.dgvYCTZ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvYCTZ.Size = new System.Drawing.Size(665, 300);
+            this.dgvYCTZ.Size = new System.Drawing.Size(788, 300);
             this.dgvYCTZ.TabIndex = 52;
             // 
             // dgvYCTZStetName
@@ -1682,7 +1683,7 @@
             // 
             this.cbBoxYCTZ.BackColor = System.Drawing.Color.Transparent;
             this.cbBoxYCTZ.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbBoxYCTZ.DropDownHeight = 22;
+            this.cbBoxYCTZ.DropDownHeight = 24;
             this.cbBoxYCTZ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoxYCTZ.DwonImage = ((System.Drawing.Image)(resources.GetObject("cbBoxYCTZ.DwonImage")));
             this.cbBoxYCTZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1754,7 +1755,7 @@
             this.tabOperLog.Controls.Add(this.panel3);
             this.tabOperLog.Location = new System.Drawing.Point(0, 1);
             this.tabOperLog.Name = "tabOperLog";
-            this.tabOperLog.Size = new System.Drawing.Size(680, 377);
+            this.tabOperLog.Size = new System.Drawing.Size(803, 377);
             this.tabOperLog.TabIndex = 5;
             this.tabOperLog.Text = "tabPage1";
             this.tabOperLog.UseVisualStyleBackColor = true;
@@ -1768,7 +1769,7 @@
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(680, 336);
+            this.txtLog.Size = new System.Drawing.Size(803, 336);
             this.txtLog.TabIndex = 3;
             // 
             // panel3
@@ -1777,7 +1778,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(680, 41);
+            this.panel3.Size = new System.Drawing.Size(803, 41);
             this.panel3.TabIndex = 2;
             // 
             // dateTimePicker1
@@ -1797,7 +1798,7 @@
             this.tabXY.Margin = new System.Windows.Forms.Padding(2);
             this.tabXY.Name = "tabXY";
             this.tabXY.Padding = new System.Windows.Forms.Padding(2);
-            this.tabXY.Size = new System.Drawing.Size(680, 377);
+            this.tabXY.Size = new System.Drawing.Size(803, 377);
             this.tabXY.TabIndex = 6;
             this.tabXY.Text = "tabPage1";
             // 
@@ -1810,14 +1811,14 @@
             this.panel5.Location = new System.Drawing.Point(2, 2);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(676, 67);
+            this.panel5.Size = new System.Drawing.Size(799, 67);
             this.panel5.TabIndex = 48;
             // 
             // cbBoxXY
             // 
             this.cbBoxXY.BackColor = System.Drawing.Color.Transparent;
             this.cbBoxXY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbBoxXY.DropDownHeight = 22;
+            this.cbBoxXY.DropDownHeight = 24;
             this.cbBoxXY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoxXY.DwonImage = ((System.Drawing.Image)(resources.GetObject("cbBoxXY.DwonImage")));
             this.cbBoxXY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1896,7 +1897,7 @@
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 27);
-            this.panel4.Size = new System.Drawing.Size(678, 303);
+            this.panel4.Size = new System.Drawing.Size(801, 303);
             this.panel4.TabIndex = 47;
             // 
             // dgvXY
@@ -1924,6 +1925,7 @@
             this.dgvXY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvXY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvXY_LocalGUID,
+            this.dgvXY_StetName,
             this.dgvXY_PType,
             this.dgvXY_PName,
             this.dgvXY_DoctorName,
@@ -1959,7 +1961,7 @@
             this.dgvXY.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvXY.RowTemplate.Height = 32;
             this.dgvXY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvXY.Size = new System.Drawing.Size(672, 255);
+            this.dgvXY.Size = new System.Drawing.Size(795, 255);
             this.dgvXY.TabIndex = 48;
             // 
             // dgvXY_LocalGUID
@@ -1969,6 +1971,14 @@
             this.dgvXY_LocalGUID.ReadOnly = true;
             this.dgvXY_LocalGUID.Visible = false;
             this.dgvXY_LocalGUID.Width = 5;
+            // 
+            // dgvXY_StetName
+            // 
+            this.dgvXY_StetName.HeaderText = "听诊器序号";
+            this.dgvXY_StetName.MinimumWidth = 150;
+            this.dgvXY_StetName.Name = "dgvXY_StetName";
+            this.dgvXY_StetName.ReadOnly = true;
+            this.dgvXY_StetName.Width = 220;
             // 
             // dgvXY_PType
             // 
@@ -2062,7 +2072,7 @@
             this.tabMNCS.Controls.Add(this.label1);
             this.tabMNCS.Location = new System.Drawing.Point(0, 1);
             this.tabMNCS.Name = "tabMNCS";
-            this.tabMNCS.Size = new System.Drawing.Size(680, 377);
+            this.tabMNCS.Size = new System.Drawing.Size(803, 377);
             this.tabMNCS.TabIndex = 7;
             this.tabMNCS.Text = "tabPage1";
             this.tabMNCS.UseVisualStyleBackColor = true;
@@ -2074,7 +2084,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(680, 377);
+            this.label1.Size = new System.Drawing.Size(803, 377);
             this.label1.TabIndex = 0;
             this.label1.Text = "暂未开放";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2086,7 +2096,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(88, 407);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 113);
+            this.panel1.Size = new System.Drawing.Size(807, 113);
             this.panel1.TabIndex = 44;
             // 
             // txtMessage
@@ -2098,7 +2108,7 @@
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessage.Size = new System.Drawing.Size(684, 113);
+            this.txtMessage.Size = new System.Drawing.Size(807, 113);
             this.txtMessage.TabIndex = 0;
             this.txtMessage.WaterText = "信息输出";
             // 
@@ -2119,7 +2129,7 @@
             this.btnMin.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(85)))), ((int)(((byte)(230)))));
             this.btnMin.LeftBottom = 0;
             this.btnMin.LeftTop = 0;
-            this.btnMin.Location = new System.Drawing.Point(713, 9);
+            this.btnMin.Location = new System.Drawing.Point(828, 9);
             this.btnMin.Name = "btnMin";
             this.btnMin.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(135)))), ((int)(((byte)(251)))));
             this.btnMin.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(105)))), ((int)(((byte)(251)))));
@@ -2145,7 +2155,7 @@
             this.btnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(85)))), ((int)(((byte)(230)))));
             this.btnBack.LeftBottom = 0;
             this.btnBack.LeftTop = 0;
-            this.btnBack.Location = new System.Drawing.Point(731, 9);
+            this.btnBack.Location = new System.Drawing.Point(850, 9);
             this.btnBack.Name = "btnBack";
             this.btnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(135)))), ((int)(((byte)(251)))));
             this.btnBack.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(105)))), ((int)(((byte)(251)))));
@@ -2170,7 +2180,7 @@
             this.btnClose.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(85)))), ((int)(((byte)(230)))));
             this.btnClose.LeftBottom = 0;
             this.btnClose.LeftTop = 0;
-            this.btnClose.Location = new System.Drawing.Point(749, 9);
+            this.btnClose.Location = new System.Drawing.Point(872, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(135)))), ((int)(((byte)(251)))));
             this.btnClose.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(105)))), ((int)(((byte)(251)))));
@@ -2233,7 +2243,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(772, 520);
+            this.ClientSize = new System.Drawing.Size(895, 520);
             this.Controls.Add(this.tabControlYDTZ);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnMin);
@@ -2386,13 +2396,6 @@
         private System.Windows.Forms.TabPage tabXY;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridViewEx dgvXY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_LocalGUID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_PType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_PName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_DoctorName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_DocDiagnose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_Memo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_CreateTime;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBoxEx cbBoxXY;
         private System.Windows.Forms.ButtonEx buttonEx4;
@@ -2411,6 +2414,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ButtonEx btnShareXY;
         private System.Windows.Forms.ButtonEx btnLocalXY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_LocalGUID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_StetName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_PType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_PName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_DoctorName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_DocDiagnose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_Memo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_CreateTime;
     }
 }
 

@@ -32,6 +32,7 @@ namespace BDAuscultation
             this.dgvXY.Columns.Add(btnDetailColumn);
 
             dgvXY.ListColumnImage.Add(null);
+            dgvXY.ListColumnImage.Add(BDAuscultation.Properties.Resources.听诊器编号);
             dgvXY.ListColumnImage.Add(BDAuscultation.Properties.Resources.患者类型);
             dgvXY.ListColumnImage.Add(BDAuscultation.Properties.Resources.患者姓名);
             dgvXY.ListColumnImage.Add(BDAuscultation.Properties.Resources.医生姓名);
@@ -71,6 +72,7 @@ namespace BDAuscultation
                                 var formAudioDetail = new FrmAudioDetail_XY()
                                 {
                                     //StetName = this.cbBoxXY.Text,
+                                    StetName = row["StetName"] + "",
                                     PatientGUID = row["PatientGUID"] + "",
                                     PatientID = row["PatientID"] + "",
                                     PatientName = row["PatientName"] + "",
@@ -132,7 +134,7 @@ namespace BDAuscultation
             dgvXY.Rows.Clear();
             foreach (DataRow dr in dt.Rows)
             {
-                dgvXY.Rows.Add(dr["PatientGUID"],
+                dgvXY.Rows.Add(dr["PatientGUID"], dr["StetName"],
                     Setting.GetPatientNameByType(int.Parse(dr["PatientType"] + ""))
                     , dr["PatientName"],
                      dr["DocName"], dr["DocDiagnose"], dr["DocRemark"], dr["CreateTime"]);

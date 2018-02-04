@@ -214,15 +214,15 @@ namespace BDAuscultation.Forms
             }
             Mediator.isBusy = true;
             //var stethoscopeArr = StethoscopeManager.StethoscopeList.Where(s => s.Name == StetName);
-            var stethoscopeArr = StethoscopeManager.StethoscopeList.Where(s => s.IsConnected==true);
+            var stethoscopeArr = StethoscopeManager.StethoscopeList.Where(s => s.IsConnected);
             if (!stethoscopeArr.Any())
                 throw new Exception("目前没有检测到听诊器,请检测设备设置！");
-            var stethoscope = stethoscopeArr.First();
-            if (!stethoscope.IsConnected)
-            {
-                MessageBox.Show(string.Format("听诊器 {0} 尚未连接!", stethoscope.Name));
-                return;
-            }
+            //var stethoscope = stethoscopeArr.First();
+            //if (!stethoscope.IsConnected)
+            //{
+            //    MessageBox.Show(string.Format("听诊器 {0} 尚未连接!", stethoscope.Name));
+            //    return;
+            //}
             Mediator.ShowMsg("开始播放文件..." + Path.GetFileName(filePath));
             var formProcessBar = new FrmProcessBar(true)
             {
@@ -246,13 +246,20 @@ namespace BDAuscultation.Forms
                         }));
                 };
                 var bytes = File.ReadAllBytes(filePath);
-                stethoscope.StartAudioOutput();
-                stethoscope.AudioOutputStream.Write(bytes, 0, bytes.Length);
+                foreach (var stethoscope in stethoscopeArr)
+                {
+                    stethoscope.StartAudioOutput();
+                    stethoscope.AudioOutputStream.Write(bytes, 0, bytes.Length);
+                }
+              
             });
             pairThread.Start();
             formProcessBar.ShowDialog();
             formProcessBar.TimerEnable = false;
-            stethoscope.StopAudioOutput();
+            foreach (var stethoscope in stethoscopeArr)
+            {
+                stethoscope.StopAudioOutput();
+            }
             Mediator.ShowMsg("播放文件完毕..." + Path.GetFileName(filePath));
             Mediator.WriteLog(this.Name, string.Format("文件 {0} 播放成功...", Path.GetFileName(filePath)));
             Mediator.isBusy = false;
