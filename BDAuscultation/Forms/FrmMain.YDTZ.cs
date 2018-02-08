@@ -576,7 +576,7 @@ namespace BDAuscultation
                 if (tabControlYDTZMain.SelectedTab != null)
                 {
                     UpdateDataYDTZ(cbBoxYDTZ.Text, tabControlYDTZMain.SelectedTab.Name);
-                    Mediator.ShowMsg(string.Format("刷新听诊器{0} {1} 数据", cbBoxYDTZ.Text, tabControlYDTZMain.SelectedTab.Text));
+                    Mediator.ShowMsg(string.Format("刷新听诊器{0}   数据", cbBoxYDTZ.Text));
                 }
             }
         }

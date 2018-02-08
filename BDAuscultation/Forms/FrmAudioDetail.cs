@@ -10,7 +10,8 @@ using System.IO;
 using System.Threading;
 using BDAuscultation.IGetAudioInfo;
 using BDAuscultation.Devices;
-
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 namespace BDAuscultation.Forms
 {
     public partial class FrmAudioDetail : Form
@@ -71,10 +72,23 @@ namespace BDAuscultation.Forms
                 this.dataGridViewEx1.Columns.Add(btnPlayColumn);
                 dataGridViewEx1.ListColumnImage.Add(BDAuscultation.Properties.Resources.播放未点击状态);
             }
-            LoadFile();
+            //LoadFile();
             dataGridViewEx1.CellClick += dataGridViewEx1_CellClick;
         }
-
+        string getAudioGuid(string Part)
+        {
+            using (OperationContextScope scope = new OperationContextScope(Mediator.remoteService.InnerChannel))
+            {
+                MessageHeader header = MessageHeader.CreateHeader("SN", "http://tempuri.org", Setting.authorizationInfo.AuthorizationNum);
+                OperationContext.Current.OutgoingMessageHeaders.Add(header);
+                header = MessageHeader.CreateHeader("MAC", "http://tempuri.org", Setting.authorizationInfo.MachineCode);
+                OperationContext.Current.OutgoingMessageHeaders.Add(header);
+                var sqlReomte = "select GUID from AudioInfo where PGUID={0} and Part={1}";
+                var dsAudioInfo = Mediator.remoteService.ExecuteScalar(sqlReomte, new string[] { PatientGUID, Part });
+                return dsAudioInfo;
+            }
+            return string.Empty;
+        }
         void dataGridViewEx1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -92,17 +106,25 @@ namespace BDAuscultation.Forms
                             }
                             var recordTime = (DateTime)dataGridViewEx1.Rows[e.RowIndex].Cells["RecordTime"].Value;
                             var takeTime = (int)dataGridViewEx1.Rows[e.RowIndex].Cells["TakeTime"].Value;
-                            var guid = Mediator.sqliteHelper.ExecuteScalar("select Guid from AudioInfoDown where PGUID={0} and Part={1}", PatientGUID, part) + "";
-                            if (string.IsNullOrEmpty(guid))
+                            var guid = getAudioGuid(part);
+                            var fileRemotePath = Mediator.remoteService.GetFilePath2(recordTime, guid);
+                            if (Mediator.remoteService.isExistFile(fileRemotePath))
                             {
-                                MessageBox.Show("未找到录音");
-                                return;
+                                var len = Mediator.remoteService.GetFileLength(fileRemotePath);
+                                var bytes = Mediator.remoteService.DownLoadFile(fileRemotePath, 0, (int)len);
+                                PlayAudio(bytes, takeTime);
                             }
-                            //string filePath = Path.Combine(Setting.localData, @"DevicesData\AudioFiles\" + stetName + "\\" + recordTime.Year
-                            string filePath = Path.Combine(Setting.localData, @"DevicesData\DowmLoad\" + recordTime.Year
-                  + "\\" + recordTime.Month + "\\" + recordTime.Day + "\\" + guid + ".MP3");
-                            if (File.Exists(filePath))
-                                PlayAudio(filePath, takeTime);
+                            //          var guid = Mediator.sqliteHelper.ExecuteScalar("select Guid from AudioInfoDown where PGUID={0} and Part={1}", PatientGUID, part) + "";
+                            //          if (string.IsNullOrEmpty(guid))
+                            //          {
+                            //              MessageBox.Show("未找到录音");
+                            //              return;
+                            //          }
+                            //          //string filePath = Path.Combine(Setting.localData, @"DevicesData\AudioFiles\" + stetName + "\\" + recordTime.Year
+                            //          string filePath = Path.Combine(Setting.localData, @"DevicesData\DowmLoad\" + recordTime.Year
+                            //+ "\\" + recordTime.Month + "\\" + recordTime.Day + "\\" + guid + ".MP3");
+                            //          if (File.Exists(filePath))
+                            //              PlayAudio(filePath, takeTime);
                         }
                         break;
                     case "btnDelete":
@@ -112,6 +134,7 @@ namespace BDAuscultation.Forms
 
             }
         }
+
         void LoadAudio()
          {
             dataGridViewEx1.Rows.Clear();
@@ -171,6 +194,51 @@ namespace BDAuscultation.Forms
                 }
 
             }
+        }
+        void PlayAudio(byte[] bytes, int TakeTime)
+        {
+            Mediator.isBusy = true;
+            var stethoscopeArr = StethoscopeManager.StethoscopeList.Where(s => s.Name == StetName);
+                if (!stethoscopeArr.Any())
+                {
+                    MessageBox.Show("目前没有检测到听诊器,请检测设备设置！");
+                    return;
+                }
+            var stethoscope = stethoscopeArr.First();
+            if (!stethoscope.IsConnected)
+            {
+                MessageBox.Show(string.Format("听诊器 {0} 尚未连接!", stethoscope.Name));
+                return;
+            }
+            var formProcessBar = new FrmProcessBar(true)
+            {
+                ProgressBarStyle = ProgressBarStyle.Continuous,
+                ProgressBarMaxValue = TakeTime,
+                BtnText = "停止播放"
+            };
+            Thread pairThread = new Thread(() =>
+            {
+
+                formProcessBar.TimerCallBackEvent += () =>
+                {
+                    if (this.IsHandleCreated && !this.Disposing && !this.IsDisposed)
+                        Invoke(new MethodInvoker(delegate ()
+                        {
+                            formProcessBar.Title = string.Format("音频播放中... {0} 秒", formProcessBar.Times);
+                            if (formProcessBar.Times <= formProcessBar.ProgressBarMaxValue)
+                                formProcessBar.ProgressBarValue = formProcessBar.Times;
+                            else
+                                formProcessBar.Close();
+                        }));
+                };
+                stethoscope.StartAudioOutput();
+                stethoscope.AudioOutputStream.Write(bytes, 0, bytes.Length);
+            });
+            pairThread.Start();
+            formProcessBar.ShowDialog();
+            formProcessBar.TimerEnable = false;
+            stethoscope.StopAudioOutput();
+            Mediator.isBusy = false;
         }
         void PlayAudio(string filePath, int TakeTime)
         {
