@@ -54,6 +54,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlYDTZ = new System.Windows.Forms.TabControlEx();
             this.tabTZPZ = new System.Windows.Forms.TabPage();
             this.btnTZSX = new System.Windows.Forms.ButtonEx();
@@ -159,6 +162,9 @@
             this.buttonEx4 = new System.Windows.Forms.ButtonEx();
             this.btnBgXY = new System.Windows.Forms.ButtonEx();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panelXYSub = new System.Windows.Forms.Panel();
+            this.tabXYSub = new System.Windows.Forms.TabControl();
+            this.tabXYLocal = new System.Windows.Forms.TabPage();
             this.dgvXY = new System.Windows.Forms.DataGridViewEx();
             this.dgvXY_LocalGUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvXY_StetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,6 +174,16 @@
             this.dgvXY_DocDiagnose = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvXY_Memo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvXY_CreateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabXYShare = new System.Windows.Forms.TabPage();
+            this.dataGridViewEx1 = new System.Windows.Forms.DataGridViewEx();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnShareXY = new System.Windows.Forms.ButtonEx();
             this.btnLocalXY = new System.Windows.Forms.ButtonEx();
             this.tabMNCS = new System.Windows.Forms.TabPage();
@@ -210,7 +226,12 @@
             this.tabXY.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelXYSub.SuspendLayout();
+            this.tabXYSub.SuspendLayout();
+            this.tabXYLocal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXY)).BeginInit();
+            this.tabXYShare.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx1)).BeginInit();
             this.tabMNCS.SuspendLayout();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -932,7 +953,7 @@
             this.tabLYDown.Location = new System.Drawing.Point(0, 1);
             this.tabLYDown.Name = "tabLYDown";
             this.tabLYDown.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLYDown.Size = new System.Drawing.Size(678, 259);
+            this.tabLYDown.Size = new System.Drawing.Size(801, 259);
             this.tabLYDown.TabIndex = 1;
             this.tabLYDown.Text = "tabPage2";
             this.tabLYDown.UseVisualStyleBackColor = true;
@@ -996,7 +1017,7 @@
             this.dgvTZLY_Down.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTZLY_Down.RowTemplate.Height = 32;
             this.dgvTZLY_Down.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTZLY_Down.Size = new System.Drawing.Size(672, 253);
+            this.dgvTZLY_Down.Size = new System.Drawing.Size(795, 253);
             this.dgvTZLY_Down.TabIndex = 40;
             // 
             // dgvTZLY_DownGUID
@@ -1089,7 +1110,7 @@
             // 
             this.cbBoxTZLY.BackColor = System.Drawing.Color.Transparent;
             this.cbBoxTZLY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbBoxTZLY.DropDownHeight = 24;
+            this.cbBoxTZLY.DropDownHeight = 22;
             this.cbBoxTZLY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoxTZLY.DwonImage = ((System.Drawing.Image)(resources.GetObject("cbBoxTZLY.DwonImage")));
             this.cbBoxTZLY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1347,7 +1368,7 @@
             this.tabYDTZShare.Location = new System.Drawing.Point(0, 1);
             this.tabYDTZShare.Name = "tabYDTZShare";
             this.tabYDTZShare.Padding = new System.Windows.Forms.Padding(3);
-            this.tabYDTZShare.Size = new System.Drawing.Size(676, 248);
+            this.tabYDTZShare.Size = new System.Drawing.Size(799, 248);
             this.tabYDTZShare.TabIndex = 1;
             this.tabYDTZShare.Text = "tabPage2";
             this.tabYDTZShare.UseVisualStyleBackColor = true;
@@ -1410,7 +1431,7 @@
             this.dgvYDTZShare.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvYDTZShare.RowTemplate.Height = 32;
             this.dgvYDTZShare.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvYDTZShare.Size = new System.Drawing.Size(670, 242);
+            this.dgvYDTZShare.Size = new System.Drawing.Size(793, 242);
             this.dgvYDTZShare.TabIndex = 40;
             // 
             // dgvYDTZShareGUID
@@ -1818,7 +1839,7 @@
             // 
             this.cbBoxXY.BackColor = System.Drawing.Color.Transparent;
             this.cbBoxXY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbBoxXY.DropDownHeight = 24;
+            this.cbBoxXY.DropDownHeight = 22;
             this.cbBoxXY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoxXY.DwonImage = ((System.Drawing.Image)(resources.GetObject("cbBoxXY.DwonImage")));
             this.cbBoxXY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1890,7 +1911,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.dgvXY);
+            this.panel4.Controls.Add(this.panelXYSub);
             this.panel4.Controls.Add(this.btnShareXY);
             this.panel4.Controls.Add(this.btnLocalXY);
             this.panel4.Location = new System.Drawing.Point(0, 73);
@@ -1900,14 +1921,46 @@
             this.panel4.Size = new System.Drawing.Size(801, 303);
             this.panel4.TabIndex = 47;
             // 
+            // panelXYSub
+            // 
+            this.panelXYSub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelXYSub.Controls.Add(this.tabXYSub);
+            this.panelXYSub.Location = new System.Drawing.Point(2, 48);
+            this.panelXYSub.Name = "panelXYSub";
+            this.panelXYSub.Size = new System.Drawing.Size(803, 252);
+            this.panelXYSub.TabIndex = 51;
+            // 
+            // tabXYSub
+            // 
+            this.tabXYSub.Controls.Add(this.tabXYLocal);
+            this.tabXYSub.Controls.Add(this.tabXYShare);
+            this.tabXYSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabXYSub.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabXYSub.ItemSize = new System.Drawing.Size(1, 1);
+            this.tabXYSub.Location = new System.Drawing.Point(0, 0);
+            this.tabXYSub.Name = "tabXYSub";
+            this.tabXYSub.SelectedIndex = 0;
+            this.tabXYSub.Size = new System.Drawing.Size(803, 252);
+            this.tabXYSub.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabXYSub.TabIndex = 0;
+            // 
+            // tabXYLocal
+            // 
+            this.tabXYLocal.Controls.Add(this.dgvXY);
+            this.tabXYLocal.Location = new System.Drawing.Point(4, 5);
+            this.tabXYLocal.Name = "tabXYLocal";
+            this.tabXYLocal.Padding = new System.Windows.Forms.Padding(3);
+            this.tabXYLocal.Size = new System.Drawing.Size(451, 186);
+            this.tabXYLocal.TabIndex = 0;
+            this.tabXYLocal.UseVisualStyleBackColor = true;
+            // 
             // dgvXY
             // 
             this.dgvXY.AllowUserToAddRows = false;
             this.dgvXY.AllowUserToDeleteRows = false;
             this.dgvXY.AllowUserToResizeRows = false;
-            this.dgvXY.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvXY.BackgroundColor = System.Drawing.Color.White;
             this.dgvXY.BoderPad = 4;
             this.dgvXY.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1940,9 +1993,10 @@
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvXY.DefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvXY.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvXY.EnableHeadersVisualStyles = false;
             this.dgvXY.IndexSize = 24;
-            this.dgvXY.Location = new System.Drawing.Point(3, 48);
+            this.dgvXY.Location = new System.Drawing.Point(3, 3);
             this.dgvXY.Margin = new System.Windows.Forms.Padding(3, 3, 3, 33);
             this.dgvXY.MultiSelect = false;
             this.dgvXY.Name = "dgvXY";
@@ -1961,7 +2015,7 @@
             this.dgvXY.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvXY.RowTemplate.Height = 32;
             this.dgvXY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvXY.Size = new System.Drawing.Size(795, 255);
+            this.dgvXY.Size = new System.Drawing.Size(445, 180);
             this.dgvXY.TabIndex = 48;
             // 
             // dgvXY_LocalGUID
@@ -2021,6 +2075,136 @@
             this.dgvXY_CreateTime.Name = "dgvXY_CreateTime";
             this.dgvXY_CreateTime.ReadOnly = true;
             this.dgvXY_CreateTime.Width = 200;
+            // 
+            // tabXYShare
+            // 
+            this.tabXYShare.Controls.Add(this.dataGridViewEx1);
+            this.tabXYShare.Location = new System.Drawing.Point(4, 5);
+            this.tabXYShare.Name = "tabXYShare";
+            this.tabXYShare.Padding = new System.Windows.Forms.Padding(3);
+            this.tabXYShare.Size = new System.Drawing.Size(795, 243);
+            this.tabXYShare.TabIndex = 1;
+            this.tabXYShare.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewEx1
+            // 
+            this.dataGridViewEx1.AllowUserToAddRows = false;
+            this.dataGridViewEx1.AllowUserToDeleteRows = false;
+            this.dataGridViewEx1.AllowUserToResizeRows = false;
+            this.dataGridViewEx1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewEx1.BoderPad = 4;
+            this.dataGridViewEx1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewEx1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewEx1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEx1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.dataGridViewEx1.ColumnHeadersHeight = 40;
+            this.dataGridViewEx1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewEx1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn11});
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEx1.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dataGridViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewEx1.EnableHeadersVisualStyles = false;
+            this.dataGridViewEx1.IndexSize = 24;
+            this.dataGridViewEx1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewEx1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 33);
+            this.dataGridViewEx1.MultiSelect = false;
+            this.dataGridViewEx1.Name = "dataGridViewEx1";
+            this.dataGridViewEx1.ReadOnly = true;
+            this.dataGridViewEx1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(41);
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEx1.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridViewEx1.RowHeadersWidth = 70;
+            this.dataGridViewEx1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewEx1.RowTemplate.Height = 32;
+            this.dataGridViewEx1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEx1.Size = new System.Drawing.Size(789, 237);
+            this.dataGridViewEx1.TabIndex = 49;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "GUID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "听诊器序号";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 150;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 220;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "患者类型";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "患者姓名";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "医生姓名";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "初步诊断";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "备注";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "创建时间";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 200;
             // 
             // btnShareXY
             // 
@@ -2282,7 +2466,12 @@
             this.tabXY.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panelXYSub.ResumeLayout(false);
+            this.tabXYSub.ResumeLayout(false);
+            this.tabXYLocal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvXY)).EndInit();
+            this.tabXYShare.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx1)).EndInit();
             this.tabMNCS.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2422,6 +2611,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_DocDiagnose;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_Memo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvXY_CreateTime;
+        private System.Windows.Forms.Panel panelXYSub;
+        private System.Windows.Forms.TabControl tabXYSub;
+        private System.Windows.Forms.TabPage tabXYLocal;
+        private System.Windows.Forms.TabPage tabXYShare;
+        private System.Windows.Forms.DataGridViewEx dataGridViewEx1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     }
 }
 

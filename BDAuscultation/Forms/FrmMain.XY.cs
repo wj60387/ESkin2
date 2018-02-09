@@ -43,14 +43,14 @@ namespace BDAuscultation
         }
         void btnLocalXY_Click(object sender, EventArgs e)
         {
-            //this.tabLY.SelectedTab = tabLYDown;
+            this.tabXYSub.SelectedTab = tabXYLocal;
             btnLocalXY.HoverColor = btnLocalXY.PressColor = btnLocalXY.NormalColor = Color.Gray;
             btnShareXY.HoverColor = btnShareXY.PressColor = btnShareXY.NormalColor = Color.FromArgb(200, 200, 200);
         }
 
         void btnShareXY_Click(object sender, EventArgs e)
         {
-           // this.tabLY.SelectedTab = tabLYLocal;
+             this.tabXYSub.SelectedTab = tabXYShare;
             btnShareXY.HoverColor = btnShareXY.PressColor = btnShareXY.NormalColor = Color.Gray;
             btnLocalXY.HoverColor = btnLocalXY.PressColor = btnLocalXY.NormalColor = Color.FromArgb(200, 200, 200);
         }
